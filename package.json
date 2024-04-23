@@ -11,8 +11,8 @@
     "type": "git",
     "url": "git@github.com:hashicorp/setup-boundary.git"
   },
-  "license": "Apache-2.0",
-  "author": "Kerim Satirli <kerim@hashicorp.com> & Jenna Goldstrich <jgoldstrich@hashicorp.com>",
+  "license": "MPL-2.0",
+  "author": "Bruno Schaatsbergen <bruno.schaatsbergen@hashicorp.com>",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc && ncc build --no-cache",
