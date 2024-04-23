@@ -19,4 +19,4 @@ runs:
   main: "dist/index.js"
 branding:
   icon: "package"
-  color: "blue"
+  color: "red"
