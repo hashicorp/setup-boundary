@@ -12,7 +12,7 @@ The default configuration installs the latest version of the Boundary CLI and in
 
 ```yaml
 steps:
-    - uses: hashicorp/setup-boundar@v1
+  - uses: hashicorp/setup-boundar@v1
 ```
 
 A specific version of the Boundary CLI can be installed:
@@ -21,16 +21,16 @@ A specific version of the Boundary CLI can be installed:
 steps:
     - uses: hashicorp/setup-boundary@v1
     with:
-        version: 0.15.4
+      version: 0.15.4
 ```
 
 Subsequent steps can access outputs when the wrapper script is installed:
 
 ```yaml
 steps:
-    - uses: hashicorp/setup-boundary@v1
+  - uses: hashicorp/setup-boundary@v1
 
-    - id: connect
+  - id: connect
     run: boundary connect -target-id ttcp_1234567890
 ```
 ## Inputs
