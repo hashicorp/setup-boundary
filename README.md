@@ -4,6 +4,8 @@ The `hashicorp/setup-boundary` action sets up the Boundary CLI in your GitHub Ac
 
 After you've used the action, subsequent steps in the same job can run Boundary commands using [the GitHub Actions `run` syntax](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun).
 
+![Boundary](images/Boundary.png)
+
 ## Usage
 
 This action can be run on `ubuntu-latest`, `windows-latest`, and `macos-latest` GitHub Actions runners. When running on `windows-latest` the shell should be set to Bash. When running on self-hosted GitHub Actions runners, NodeJS must be previously installed with the version specified in the [`action.yml`](https://github.com/hashicorp/setup-boundary/blob/main/action.yml).
