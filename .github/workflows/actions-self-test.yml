@@ -4,7 +4,7 @@ on:
   push:
 
 env:
-  PRODUCT_VERSION: "1.8.6"
+  PRODUCT_VERSION: "0.15.4"
 
 jobs:
   setup-boundary:
