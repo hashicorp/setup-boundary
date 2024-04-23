@@ -21,9 +21,9 @@ A specific version of the Boundary CLI can be installed:
 
 ```yaml
 steps:
-    - uses: hashicorp/setup-boundary@v1
-      with:
-        version: 0.15.4
+  - uses: hashicorp/setup-boundary@v1
+    with:
+      version: 0.15.4
 ```
 
 Subsequent steps can access outputs when the wrapper script is installed:
