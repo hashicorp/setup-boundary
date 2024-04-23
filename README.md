@@ -14,7 +14,7 @@ The default configuration installs the latest version of the [Boundary CLI](http
 
 ```yaml
 steps:
-  - uses: hashicorp/setup-boundar@v1
+  - uses: hashicorp/setup-boundary@v1
 ```
 
 A specific version of the Boundary CLI can be installed:
