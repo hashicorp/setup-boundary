@@ -1,0 +1,22 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+---
+
+name: "Setup HashiCorp Boundary"
+author: "HashiCorp"
+description: "A GitHub Action to install a specific version of HashiCorp Boundary and add it to PATH."
+inputs:
+  version:
+    description: "The Boundary version to install and add to PATH."
+    required: true
+    default: "latest"
+outputs:
+  version:
+    description: "The Boundary version that was installed and added to PATH."
+runs:
+  using: "node20"
+  main: "dist/index.js"
+branding:
+  icon: "package"
+  color: "blue"

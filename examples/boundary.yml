@@ -1,0 +1,25 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
+name: boundary
+
+on:
+  - push
+
+jobs:
+  boundary:
+    runs-on: ubuntu-latest
+    name: Run Boundary
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup `boundary`
+        uses: hashicorp/setup-boundary@main
+        id: setup
+        with:
+          version: "1.8.6" # or latest
+
+      - name: Run `boundary -h`
+        id: help
+        run: boundary -h

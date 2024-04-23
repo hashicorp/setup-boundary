@@ -1,0 +1,34 @@
+{
+  "name": "setup-boundary",
+  "version": "0.1.0",
+  "description": "A GitHub Action to install a specific version of HashiCorp Boundary and add it to PATH.",
+  "keywords": [
+    "github-actions",
+    "hashicorp",
+    "boundary"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hashicorp/setup-boundary.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Kerim Satirli <kerim@hashicorp.com> & Jenna Goldstrich <jgoldstrich@hashicorp.com>",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc && ncc build --no-cache",
+    "fmt": "prettier --write 'src/*.ts'"
+  },
+  "dependencies": {
+    "@actions/core": "1.10.1",
+    "@actions/io": "1.1.3",
+    "@actions/tool-cache": "2.0.1",
+    "@hashicorp/github-actions-core": "github:hashicorp/github-actions-core#v0.4.1",
+    "@vercel/ncc": "0.36.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.10",
+    "@types/semver": "7.5.4",
+    "prettier": "2.8.4",
+    "typescript": "4.9.5"
+  }
+}
