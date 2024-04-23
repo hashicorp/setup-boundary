@@ -21,7 +21,7 @@ A specific version of the Boundary CLI can be installed:
 steps:
 - uses: hashicorp/setup-boundary@v1
   with:
-    terraform_version: 0.15.4
+    version: 0.15.4
 ```
 
 Subsequent steps can access outputs when the wrapper script is installed:
