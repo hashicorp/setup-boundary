@@ -27,7 +27,7 @@ jobs:
         run: boundary version
 
       - name: Validate Boundary version is accurate
-        run: "boundary version | grep --silent 'Boundary v${{ env.PRODUCT_VERSION }}'"
+        run: "boundary version | grep --silent 'Version Number:      ${{ env.PRODUCT_VERSION }}'"
 
       - name: Setup Boundary with an invalid version (using local GitHub Action)
         uses: "./"
