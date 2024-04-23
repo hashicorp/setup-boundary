@@ -4,7 +4,7 @@ The `hashicorp/setup-boundary` action sets up the Boundary CLI in your GitHub Ac
 
 After you've used the action, subsequent steps in the same job can run Boundary commands using [the GitHub Actions `run` syntax](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun).
 
-![Boundary](images/Boundary.png)
+<img alt="Boundary" src="images/Boundary.png" alt="Image" width="500px"/>
 
 ## Usage
 
