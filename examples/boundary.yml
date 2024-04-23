@@ -18,7 +18,7 @@ jobs:
         uses: hashicorp/setup-boundary@main
         id: setup
         with:
-          version: "1.8.6" # or latest
+          version: "0.15.4" # or latest
 
       - name: Run `boundary -h`
         id: help
