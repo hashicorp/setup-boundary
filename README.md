@@ -8,7 +8,7 @@ After you've used the action, subsequent steps in the same job can run Boundary 
 
 This action can be run on `ubuntu-latest`, `windows-latest`, and `macos-latest` GitHub Actions runners. When running on `windows-latest` the shell should be set to Bash. When running on self-hosted GitHub Actions runners, NodeJS must be previously installed with the version specified in the [`action.yml`](https://github.com/hashicorp/setup-boundary/blob/main/action.yml).
 
-The default configuration installs the latest version of the Boundary CLI and installs the wrapper script to wrap subsequent calls to the `boundary` binary:
+The default configuration installs the latest version of the [Boundary CLI](https://developer.hashicorp.com/boundary/install?ajs_aid=2548f4b6-d9b0-45f2-9644-a469942b6f54&product_intent=boundary) and installs the wrapper script to wrap subsequent calls to the `boundary` binary:
 
 ```yaml
 steps:
