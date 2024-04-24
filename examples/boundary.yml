@@ -20,6 +20,6 @@ jobs:
         with:
           version: "0.15.4" # or latest
 
-      - name: Run `boundary -h`
+      - name: Run `boundary help`
         id: help
         run: boundary help
