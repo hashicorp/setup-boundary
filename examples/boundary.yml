@@ -12,7 +12,7 @@ jobs:
     name: Run Boundary
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup `boundary`
         uses: hashicorp/setup-boundary@main
@@ -22,4 +22,4 @@ jobs:
 
       - name: Run `boundary -h`
         id: help
-        run: boundary -h
+        run: boundary help
