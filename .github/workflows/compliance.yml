@@ -7,7 +7,6 @@ permissions:
   contents: read
 
 jobs:
-  # Reference: ENGSRV-059
   copywrite:
     runs-on: ubuntu-latest
     steps:
