@@ -1,5 +1,5 @@
 # Copyright (c) HashiCorp, Inc.
-# SPDX-License-Identifier: Apache-2.0
+# SPDX-License-Identifier: MPL-2.0
 schema_version = 1
 
 project {
@@ -11,5 +11,4 @@ project {
         "dist/*",
         "node_modules/",
     ]
-
 }
