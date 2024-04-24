@@ -45750,7 +45750,7 @@ function fetchBinary(binaryName, version, userAgent) {
         core.debug(`Finding release that matches ${version}.`);
         const isValidVersion = semver.validRange(version);
         if (!isValidVersion && version !== "latest") {
-            throw new Error("Invalid version, only valid semver versions or 'latest' are allowed");
+            throw new Error("Invalid version, only valid SemVer versions or 'latest' are allowed");
         }
         let release = yield hc.getRelease(binaryName, version, userAgent);
         const nameAndVersion = binaryName + ` ` + version;
