@@ -48,6 +48,9 @@ In the above example, the following definitions have been set.
 - The version of `boundary` to set up has been set as `0.15.0`. For a complete list, see [releases.hashicorp.com](https://releases.hashicorp.com/boundary/).
 - The Boundary Target to interact with has been set as `ttcp_1234567890`.
 
+> [!NOTE]
+> To retrieve the `latest` version, this GitHub Action polls the HashiCorp [Releases API](https://api.releases.hashicorp.com/v1/releases/boundary) and finds the latest released version of Boundary that isn't marked as a pre-release (`is_prerelease`).
+
 These definitions may require updating to suit your deployment, such as specifying [self-hosted](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#choosing-self-hosted-runners) runners.
 
 Additionally, you may configure [outputs](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-defining-outputs-for-a-job) to consume return values from the Action's operations.
