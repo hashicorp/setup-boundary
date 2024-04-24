@@ -1,10 +1,12 @@
 version: 2
+
 updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
-  # Dependabot only updates hashicorp GHAs, external GHAs are managed by internal tooling (tsccr)
+
+  # Dependabot only updates HashiCorp GHAs, external GHAs are managed by internal tooling (tsccr)
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
