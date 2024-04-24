@@ -1,40 +1,67 @@
-# setup-boundary
+# GitHub Action: `setup-boundary`
 
-The `hashicorp/setup-boundary` action sets up the Boundary CLI in your GitHub Actions workflow.
-
-After you've used the action, subsequent steps in the same job can run Boundary commands using [the GitHub Actions `run` syntax](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun).
+The `hashicorp/setup-boundary` Action sets up the [Boundary](https://www.boundaryproject.io) CLI in your GitHub Actions workflow by adding the `boundary` binary to `PATH`.
 
 <img alt="Boundary" src="images/Boundary.png" alt="Image" width="500px"/>
 
+<!-- TOC -->
+* [GitHub Action: `setup-boundary`](#github-action-setup-boundary)
+  * [Usage](#usage)
+    * [OS Support](#os-support)
+  * [Inputs](#inputs)
+  * [Outputs](#outputs)
+  * [License](#license)
+  * [Code of Conduct](#code-of-conduct)
+  * [Contributing](#contributing)
+<!-- TOC -->
+
 ## Usage
 
-This action can be run on `ubuntu-latest`, `windows-latest`, and `macos-latest` GitHub Actions runners. When running on `windows-latest` the shell should be set to Bash. When running on self-hosted GitHub Actions runners, NodeJS must be previously installed with the version specified in the [`action.yml`](https://github.com/hashicorp/setup-boundary/blob/main/action.yml).
-
-The default configuration installs the latest version of the [Boundary CLI](https://developer.hashicorp.com/boundary/install?ajs_aid=2548f4b6-d9b0-45f2-9644-a469942b6f54&product_intent=boundary) and installs the wrapper script to wrap subsequent calls to the `boundary` binary:
+Create a GitHub Actions Workflow file (e.g.: `.github/workflows/boundary.yml`):
 
 ```yaml
-steps:
-  - uses: hashicorp/setup-boundary@v1
+name: boundary
+
+on:
+  - push
+
+jobs:
+  boundary:
+    runs-on: ubuntu-latest
+    name: Run Boundary
+    steps:
+      - name: Setup `boundary`
+        uses: hashicorp/setup-boundary@main
+        id: setup
+        with:
+          version: "latest"
+
+      - name: Run `boundary connect`
+        id: connect
+        run: "boundary connect -target-id ttcp_1234567890"
 ```
 
-A specific version of the Boundary CLI can be installed:
+In the above example, the following definitions have been set.
 
-```yaml
-steps:
-  - uses: hashicorp/setup-boundary@v1
-    with:
-      version: 0.15.4
-```
+- The event trigger has been set to `push`. For a complete list, see [Events that trigger workflows](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows).
+- The origin of this GitHub Action has been set as `hashicorp/setup-boundary@main`. For newer versions, see the [Releases](https://github.com/hashicorp/setup-boundary/releases).
+- The version of `boundary` to set up has been set as `0.15.0`. For a complete list, see [releases.hashicorp.com](https://releases.hashicorp.com/boundary/).
+- The Boundary Target to interact with has been set as `ttcp_1234567890`.
 
-Subsequent steps can access outputs when the wrapper script is installed:
+These definitions may require updating to suit your deployment, such as specifying [self-hosted](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#choosing-self-hosted-runners) runners.
 
-```yaml
-steps:
-  - uses: hashicorp/setup-boundary@v1
+Additionally, you may configure [outputs](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-defining-outputs-for-a-job) to consume return values from the Action's operations.
 
-  - id: connect
-    run: boundary connect -target-id ttcp_1234567890
-```
+### OS Support
+
+The action can be run on `ubuntu-latest`, `windows-latest`, and `macos-latest` GitHub Actions runners.
+
+> [!IMPORTANT]
+> When running on `windows-latest` the shell must be set to `bash`.
+
+> [!NOTE]
+> When running on self-hosted GitHub Actions runners, a Node.js version compatible with the one specified in [`action.yml`](https://github.com/hashicorp/setup-boundary/blob/main/action.yml) must be available.
+
 ## Inputs
 
 The action supports the following inputs:
@@ -55,14 +82,8 @@ The action supports the following outputs:
 
 [Code of Conduct](CODE_OF_CONDUCT.md)
 
-## Experimental Status
-
-By using the software in this repository (the "Software"), you acknowledge that: (1) the Software is still in development, may change, and has not been released as a commercial product by HashiCorp and is not currently supported in any way by HashiCorp; (2) the Software is provided on an "as-is" basis, and may include bugs, errors, or other issues;  (3) the Software is NOT INTENDED FOR PRODUCTION USE, use of the Software may result in unexpected results, loss of data, or other unexpected results, and HashiCorp disclaims any and all liability resulting from use of the Software; and (4) HashiCorp reserves all rights to make all decisions about the features, functionality and commercial release (or non-release) of the Software, at any time and without any obligation or liability whatsoever.
-
 ## Contributing
 
-### License Headers
-
-All source code files (excluding autogenerated files like `package.json`, prose, and files excluded in [.copywrite.hcl](.copywrite.hcl)) must have a license header at the top.
+All source code files (excluding files like `package.json`, prose, and files excluded in [.copywrite.hcl](.copywrite.hcl)) must have a license header at the top.
 
 This can be autogenerated by installing the HashiCorp [`copywrite`](https://github.com/hashicorp/copywrite#getting-started) tool and running `copywrite headers` in the root of the repository.
