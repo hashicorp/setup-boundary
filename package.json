@@ -1,6 +1,6 @@
 {
   "name": "setup-boundary",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A GitHub Action to install a specific version of HashiCorp Boundary and add it to PATH.",
   "keywords": [
     "github-actions",
@@ -12,19 +12,20 @@
     "url": "git@github.com:hashicorp/setup-boundary.git"
   },
   "license": "MPL-2.0",
-  "author": "Bruno Schaatsbergen <bruno.schaatsbergen@hashicorp.com> & Kerim Satirli <kerim@hashicorp.com>",
+  "author": "Kerim Satirli <kerim@hashicorp.com> & Bruno Schaatsbergen <bruno.schaatsbergen@hashicorp.com>",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc && ncc build --no-cache",
-    "fmt": "prettier --write 'src/*.ts'"
+    "fmt": "prettier --write 'src/*.ts'",
+    "copywrite": "copywrite headers && copywrite license"
   },
   "dependencies": {
-    "@hashicorp/github-actions-core": "github:hashicorp/github-actions-core#1.0.0"
+    "@actions/core": "^1.10.1",
+    "@hashicorp/github-actions-core": "github:hashicorp/github-actions-core#v1.0.0"
   },
   "devDependencies": {
-    "@types/node": "^20.11.10",
-    "@types/semver": "7.5.8",
-    "prettier": "3.2.5",
-    "typescript": "5.4.5"
+    "@types/node": "^20.12.8",
+    "@types/semver": "^7.5.8",
+    "typescript": "^5.4.5"
   }
 }
