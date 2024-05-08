@@ -1,0 +1,23 @@
+github-actions:
+  - changed-files:
+      - any-glob-to-any-file:
+        - '.github/**'
+
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+        - 'package.json'
+        - 'package-lock.json'
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+        - 'README.md'
+        - 'CODE_OF_CONDUCT.md'
+        - 'images/**'
+
+legal:
+  - changed-files:
+      - any-glob-to-any-file:
+        - 'LICENSE'
+        - '.copywrite.hcl'
