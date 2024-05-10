@@ -16,7 +16,7 @@ jobs:
     steps:
       - run: gh issue edit "$NUMBER" --add-label "$LABELS"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NUMBER: ${{ github.event.issue.number }}
           LABELS: needs-triage
